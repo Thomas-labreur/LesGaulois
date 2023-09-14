@@ -95,9 +95,13 @@ public class Romain {
 			texte += resistanceEquipement + "!";
 		}
 		parler(texte);
-		forceCoup -= resistanceEquipement;
+		if (forceCoup >= resistanceEquipement) {
+			forceCoup -= resistanceEquipement ;
+		} else {
+			forceCoup=0;
+		}
 		return forceCoup;
-	}
+		}
 	
 	private Equipement[] ejecterEquipement() {
 		Equipement[] equipementEjecte = new Equipement[nbEquipement];
